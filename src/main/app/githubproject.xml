@@ -10,5 +10,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
     <flow name="githubprojectFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/github" allowedMethods="GET" doc:name="HTTP"/>
         <logger message="In githubproject-- #[message.payload]" level="INFO" doc:name="Logger"/>
+        <set-payload value="Final Test..." doc:name="Set Payload"/>
+        <logger message="payload after change-- #[message.payload]" level="INFO" doc:name="Logger"/>
     </flow>
 </mule>
